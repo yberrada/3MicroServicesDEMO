@@ -1,0 +1,31 @@
+body{
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+#Intro{
+  font-size: 40px;
+  margin: auto;
+  margin-top: 300px;
+  width: 85%;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+
+}
+.services li {
+  display: inline-block;
+  list-style: none;
+  margin-top: 100px;
+  margin-right: 100px;
+}
+.services ul {
+  text-align: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+#img3, #img2, #img1{
+  width: 100px;
+   height: auto;
+}
