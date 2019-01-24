@@ -29,3 +29,6 @@ body{
   width: 100px;
    height: auto;
 }
+#Logout{
+  display:none;
+}

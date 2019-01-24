@@ -12,3 +12,9 @@ $(function () {
    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
    return false;
  });
+
+ if(localStorage.userID!=null ||localStorage.userID !=undefined){
+   $("#Logout").show();
+   $("#signup").hide();
+   $("#login").hide();
+ }

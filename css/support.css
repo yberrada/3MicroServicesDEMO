@@ -26,3 +26,6 @@ body {
   position: absolute;
   margin-bottom: 8px;
 }
+#Logout{
+  display:none;
+}

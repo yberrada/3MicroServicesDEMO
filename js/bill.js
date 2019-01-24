@@ -9,10 +9,10 @@ http.onreadystatechange=()=>{
       }
   }
 };
-http.open("GET","http://localhost:5000/bill/mouad/",true);
+console.log(localStorage.userID)
+http.open("GET","http://localhost:7001/bill/"+localStorage.userID,true);
 http.send();
 }
-update();
 
 function payBill() {
 var value = $('#input').val();
@@ -25,10 +25,19 @@ http.onreadystatechange=()=>{
       //  $("#info1").html(http.response);
       update();
       }
+      console.log(localStorage.userID);
   }
   document.getElementById("input").value = "";
 
 };
-http.open("GET","http://localhost:5000/bill/pay/mouad/"+value,true);
+http.open("GET","http://localhost:7001/bill/pay/"+localStorage.userID+"/"+value,true);
 http.send();
 };
+
+if(localStorage.userID!=null ||localStorage.userID !=undefined){
+  $("#Logout").show();
+  $("#signup").hide();
+  $("#login").hide();
+}
+
+update();

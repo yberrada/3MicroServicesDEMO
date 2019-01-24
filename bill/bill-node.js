@@ -7,10 +7,12 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 
+
+
 // get bill due amount
 app.get("/bill/:id",(req,res)=>{
 
-  cloudant.use('bills').find({ selector: { _id:req.params._id } }, function(err, result) {
+  cloudant.use('bills').find({ selector: { _id:req.params.id } }, function(err, result) {
       if (err) {
         throw err;
       }
@@ -23,7 +25,7 @@ app.get("/bill/:id",(req,res)=>{
   // pay bill due amount
   app.get("/bill/pay/:id/:amount",(req,res)=>{
 
-    cloudant.use('bills').find({ selector: { _id:req.params._id } }, function(err, result) {
+    cloudant.use('bills').find({ selector: { _id:req.params.id } }, function(err, result) {
         if (err) {
           throw err;
         }
@@ -40,6 +42,6 @@ app.get("/bill/:id",(req,res)=>{
       cloudant.use('bills').insert(customer, function(err, body) {});
       });
     });
-  app.listen(5000,()=>{
-    console.log("Running Order Service on 5000");
+  app.listen(7001,()=>{
+    console.log("Running Order Service on 7001");
   })

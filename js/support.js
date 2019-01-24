@@ -45,3 +45,9 @@ function keyPress(e) {
     console.log('hi')
   }
 }
+
+if(localStorage.userID!=null ||localStorage.userID !=undefined){
+  $("#Logout").show();
+  $("#signup").hide();
+  $("#login").hide();
+}
