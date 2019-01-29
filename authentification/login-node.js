@@ -10,13 +10,8 @@ var bodyParser=require("body-parser");
 var jwt = require('jsonwebtoken');
 var expressValidator = require('express-validator');
 app.use(expressValidator())
-  var cookieParser =require("cookie-parser");
   var path = require('path');
-  var exphbs = require('express-handlebars');
-  var flash = require('flash');
-  var session = require('express-session');
-  var passport = require('passport');
-  var LocalStrategy = require('passport-local').Strategy;
+
 
 
 app.use(bodyParser.urlencoded({
@@ -71,6 +66,21 @@ app.post("/login",(req,res)=>{
     }
     });
   });
+
+
+  app.post("/register",(req,res)=>{
+     var user_name=req.body.user;
+     var password=req.body.password;
+     console.log(req.body);
+     console.log("User name = "+user_name+", password is "+password);
+     //////////
+     cloudant.use('users').insert({ "_id":user_name, "password":password  }, req.params.id).then((data) => {
+       console.log(data);
+       res.send(data);
+     }).catch((err) => {
+       console.log(err.reason);
+     });
+    });
 
   app.listen(7000,()=>{
     console.log("Running Order Service on 7000");

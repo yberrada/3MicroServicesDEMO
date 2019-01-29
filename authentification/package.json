@@ -1,0 +1,21 @@
+{
+  "name": "authentification",
+  "version": "1.0.0",
+  "description": "Authentification Microservice",
+  "main": "login-node.js",
+  "scripts": {
+    "start": "node login-node.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Younes Berrada",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudant/cloudant": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "path": "^0.12.7"
+  }
+}

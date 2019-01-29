@@ -1,3 +1,4 @@
+#public ip of the ibm cluster is 173.193.122.87
 import json
 import watson_developer_cloud
 from flask import Flask
@@ -12,6 +13,7 @@ assistant = watson_developer_cloud.AssistantV1(
     version='2018-09-20',
     url="https://gateway.watsonplatform.net/assistant/api"
 )
+
 @app.route('/chatlog/<text>', methods=['GET'])
 def botprocess(text):
     response = assistant.message(
@@ -24,3 +26,6 @@ def botprocess(text):
     data = json.loads(output)
     output=data['output']['text'][0];
     return(output)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
