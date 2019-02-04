@@ -1,5 +1,5 @@
-<h1> Web app that puts the concepts of Micro Services into practice <h1>
-                                         
+Web app that puts the concepts of Micro Services into practice
+                            
 
 
 
