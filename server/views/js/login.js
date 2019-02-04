@@ -11,14 +11,18 @@ http.onreadystatechange=()=>{
       obj = JSON.parse(http.response);
       if(obj.docs[0].password == password){
       document.getElementById("status").innerHTML = "Log in Successful";
-    }else {
-         document.getElementById("status").innerHTML = "Log in NOT Successful";
-      }
       localStorage.userID =obj.docs[0]._id;
-      console.log(localStorage.userID);
       $("#Logout").show();
       $("#signup").hide();
       $("#login").hide();
+      window.location.href = "index.html";
+
+    }else {
+         document.getElementById("status").innerHTML = "Log in NOT Successful";
+           localStorage.userID  = undefined;
+           console.log(localStorage.userID);
+      }
+      console.log(localStorage.userID);
       }
   }
 };
@@ -28,5 +32,13 @@ http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 http.send(data);
 };
 document.getElementById("status").value = "";
+document.onkeypress = keyPress;
+function keyPress(e) {
+  var x = e || window.event;
+  var key = (x.keyCode || x.which);
+  if (key == 13 || key == 3) {
+    login();
+  }
+}
 // localStorage.clear();
 // localStorage.removeItem('userID');

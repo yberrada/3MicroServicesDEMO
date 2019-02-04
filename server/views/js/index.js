@@ -13,8 +13,17 @@ $(function () {
    return false;
  });
 
- if(localStorage.userID!=null ||localStorage.userID !=undefined){
-   $("#Logout").show();
-   $("#signup").hide();
-   $("#login").hide();
- }
+//  if (localStorage.userID ==undefined){
+//   $("#Logout").hide();
+//   $("#signup").show();
+//   $("#login").show();
+//   $("#Logged").hide();
+//   $("#NotLogged").show();
+// }
+if(localStorage.userID!=null ||localStorage.userID !=undefined){
+  $("#Logout").show();
+  $("#signup").hide();
+  $("#login").hide();
+  $("#Logged").show();
+  $("#NotLogged").hide();
+}

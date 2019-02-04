@@ -38,6 +38,16 @@ h4{
   color: black;
   margin-top: 50px;
 }
-#Logout{
+#Logout,#Logged{
   display:none;
+}
+#nlog{
+  margin-top: 300px;
+  font-size: 60px ;
+}
+#admin1:hover{
+  color:orange !important;
+}
+#admin1{
+  color:yellow !important;
 }

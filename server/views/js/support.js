@@ -1,16 +1,14 @@
 var http = new XMLHttpRequest();
 var response;
 
-var messages = [], //array that hold the record of each string in chat
-  newInput = "", //keeps track of the most recent input string from the user
-  botName = 'Chatbot', //name of the chatbot
-  talking = true; //when false the speach function doesn't work
+var messages = [],
+  newInput = "",
+  botName = 'Chatbot',
+  talking = true;
 
 
-//this runs each time enter is pressed.
-//It controls the overall input and output
+
 function discussion() {
-  //if the message from the user isn't empty then run
   if (document.getElementById("inputfield").value != "") {
     newInput =$('#inputfield').val();
     http.onreadystatechange=()=>{
@@ -29,7 +27,7 @@ function discussion() {
           }
       }
     };
-    http.open("GET","http://173.193.122.87:30003/chatlog/"+newInput,true);
+    http.open("GET","http://173.193.122.87:30005/chatlog/"+newInput,true);
     http.send();
   }
 }
@@ -41,13 +39,12 @@ function keyPress(e) {
   if (key == 13 || key == 3) {
     discussion();
   }
-  if (key == 38) {
-    console.log('hi')
-  }
 }
 
 if(localStorage.userID!=null ||localStorage.userID !=undefined){
   $("#Logout").show();
   $("#signup").hide();
   $("#login").hide();
+  $("#Logged").show();
+  $("#NotLogged").hide();
 }

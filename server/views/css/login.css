@@ -27,7 +27,13 @@ button{
 #amount{
   color: red;
 }
-#identif,#password{
+#admin1:hover{
+  color:orange !important;
+}
+#admin1{
+  color:yellow !important;
+}
+#identif,#password,#amountDue{
   display: block;
   margin-left: auto;
   margin-right: auto;

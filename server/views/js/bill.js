@@ -33,11 +33,22 @@ http.onreadystatechange=()=>{
 http.open("GET","http://173.193.122.87:30001/bill/pay/"+localStorage.userID+"/"+value,true);
 http.send();
 };
+document.onkeypress = keyPress;
+function keyPress(e) {
+  var x = e || window.event;
+  var key = (x.keyCode || x.which);
+  if (key == 13 || key == 3) {
+    payBill();
+  }
+}
 
 if(localStorage.userID!=null ||localStorage.userID !=undefined){
   $("#Logout").show();
   $("#signup").hide();
   $("#login").hide();
+  $("#Logged").show();
+  $("#NotLogged").hide();
 }
 
+console.log(localStorage.userID);
 update();

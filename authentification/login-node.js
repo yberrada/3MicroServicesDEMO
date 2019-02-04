@@ -10,9 +10,7 @@ var bodyParser=require("body-parser");
 var jwt = require('jsonwebtoken');
 var expressValidator = require('express-validator');
 app.use(expressValidator())
-  var path = require('path');
-
-
+var path = require('path');
 
 app.use(bodyParser.urlencoded({
   extended: false

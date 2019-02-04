@@ -12,7 +12,7 @@ http.onreadystatechange=()=>{
       }
   }
 };
-http.open("POST","173.193.122.87:30002/register",true);
+http.open("POST","http://173.193.122.87:30002/register",true);
 var data="user="+id+"&password="+password;
 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 http.send(data);

@@ -29,3 +29,10 @@ body {
 #Logout{
   display:none;
 }
+
+#admin1:hover{
+  color:orange !important;
+}
+#admin1{
+  color:yellow !important;
+}

@@ -21,6 +21,7 @@
         <li><a href="support.html">Support</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li id ="admin"><a href="admin.html" id ="admin1"><span class="glyphicon glyphicon-user"></span> ADMIN</a></li>
         <li id ="signup"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li id="login"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         <li id="Logout"><a href="logout.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
@@ -28,15 +29,18 @@
     </div>
   </nav>
   <body>
-    <div class="bill">
+    <div id ="Logged" class="bill">
       <p class="intro">The amount due is</p>
       <p id= "amount"></p>
       <h4>Enter the amount you want to pay</h4>
       <input id ="input" type="text" name="" value="">
       <button id="button "type="button" onclick="payBill()" name="button">Pay my bill</button>
     </div>
+    <div id="NotLogged">
+      <p id = "nlog">You are not logged in!</p>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
     <script src="js/bill.js"></script>
   </body>
 </html>
