@@ -7,7 +7,6 @@ var messages = [],
   talking = true;
 
 
-
 function discussion() {
   if (document.getElementById("inputfield").value != "") {
     newInput =$('#inputfield').val();
