@@ -16,7 +16,7 @@ http.onreadystatechange=()=>{
 };
 // http.open("PUT","http://127.0.0.1:3000/due",true);
 // 173.193.122.87
-http.open("PUT","http://173.193.122.87:30006/due",true);
+http.open("POST","http://173.193.122.87:30006/due",true);
 var data="user="+id+"&password="+password+"&amount="+due;
 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 http.send(data);

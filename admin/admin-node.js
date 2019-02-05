@@ -14,7 +14,7 @@ app.use( bodyParser.json() );
 
 
 
-app.put("/due",(req,res)=>{
+app.post("/due",(req,res)=>{
   var user_name=req.body.user;
   var password=req.body.password;
   var due=req.body.amount;
@@ -36,17 +36,26 @@ app.put("/due",(req,res)=>{
 
     }
     cloudant.use('bills').find({ selector: { _id:req.body.user } }, function(err, result) {
+      var customer;
       for (var i = 0; i < result.docs.length; i++) {
-        var customer = {
+         customer = {
           "_id": result.docs[i]._id,
           "_rev": result.docs[i]._rev,
           "LastName": result.docs[i].LastName,
           "Due": due
         };
       }
+      if (result.docs.length==0 ) {
+         customer = {
+          "_id":req.body.user,
+          "LastName":"",
+          "Due": due
+        };
+      }
       res.json("Customer updated succesfully");
       cloudant.use('bills').insert(customer, (err, body)=>{
       });
+
     })
     console.log(result);
   });
