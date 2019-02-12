@@ -20,11 +20,12 @@ body {
 
 #inputfield {
   font: 17px arial, sans-serif;
-  height: 22px;
-  width: 95%;
-  bottom: 0;
-  position: absolute;
-  margin-bottom: 8px;
+    height: 22px;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    position: absolute;
+    margin-bottom: 8px;
 }
 #Logout{
   display:none;
@@ -43,4 +44,32 @@ font-size: 20px;
 border-radius: 5px ;
 border-width: thin;
 clear: both;
+}
+#chatentry1{
+  float: right;
+  background-color: #2FB231;
+  margin-top: 5px;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 5px ;
+  border-width: thin;
+  clear: both;
+  border: solid;
+  padding: 5px 5px 5px 5px;
+}
+#chatentry2{
+  float: left;
+  background-color: #2F83B2;
+  margin-top: 5px;
+  font-family: sans-serif;
+  font-size: 20px;
+  border-radius: 5px ;
+  border-width: thin;
+  clear: both;
+  border: solid;
+  padding: 5px 5px 5px 5px;
+
+}
+#chat{
+  overflow:scroll;
 }
