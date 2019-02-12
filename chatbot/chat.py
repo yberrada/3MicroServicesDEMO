@@ -17,7 +17,7 @@ assistant = watson_developer_cloud.AssistantV1(
 @app.route('/chatlog/<text>', methods=['GET'])
 def botprocess(text):
     response = assistant.message(
-        workspace_id='b663bdf5-e97f-432f-aa1f-472ae1dfcb7f',
+        workspace_id='f791b8ba-8cf1-442c-8744-15a166a3e00e',
         input={
             'text': text
         }

@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use( bodyParser.json() );
 
-
 app.post("/login",(req,res)=>{
    var user_name=req.body.user;
    var password=req.body.password;
