@@ -12,7 +12,8 @@ http.onreadystatechange=()=>{
       }
   }
 };
-http.open("POST","http://173.193.122.87:30001/register",true);
+var host = "http://"+window.location.hostname;
+http.open("POST",host+":30001/register",true);
 var data="user="+id+"&password="+password;
 http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 http.send(data);

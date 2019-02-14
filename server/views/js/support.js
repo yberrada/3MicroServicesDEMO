@@ -64,7 +64,8 @@ function discussion() {
   }
   var elem = document.getElementById('chat');
   elem.scrollTop = elem.scrollHeight;
-  http.open("GET","http://173.193.122.87:30005/chatlog/"+newInput,true);
+  var host = "http://"+window.location.hostname;
+  http.open("GET",host+":30005/chatlog/"+newInput,true);
   http.send();
 }
 

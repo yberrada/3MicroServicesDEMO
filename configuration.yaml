@@ -1,0 +1,189 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin
+  labels:
+    run: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: admin
+  template:
+    metadata:
+      labels:
+        run: admin
+    spec:
+      containers:
+      - name: admin
+        image: registry.ng.bluemix.net/la_factory/admin-image
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: admin
+ labels:
+   run: admin
+spec:
+ type: NodePort
+ ports:
+   - port: 3000
+     targetPort: 3000
+     nodePort: 30002
+     protocol: TCP
+ selector:
+   run: admin
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth
+  labels:
+    run: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: auth
+  template:
+    metadata:
+      labels:
+        run: auth
+    spec:
+      containers:
+      - name: auth
+        image: registry.ng.bluemix.net/la_factory/auth-image
+        ports:
+        - containerPort: 7000
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: auth
+ labels:
+   run: auth
+spec:
+ type: NodePort
+ ports:
+   - port: 7000
+     targetPort: 7000
+     nodePort: 30001
+     protocol: TCP
+ selector:
+   run: auth
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bill
+  labels:
+    run: bill
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: bill
+  template:
+    metadata:
+      labels:
+        run: bill
+    spec:
+      containers:
+      - name: bill
+        image: registry.ng.bluemix.net/la_factory/bill-image
+        ports:
+        - containerPort: 7001
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: bill
+ labels:
+   run: bill
+spec:
+ type: NodePort
+ ports:
+   - port: 7001
+     targetPort: 7001
+     nodePort: 30003
+     protocol: TCP
+ selector:
+   run: bill
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat
+  labels:
+    run: chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: chat
+  template:
+    metadata:
+      labels:
+        run: chat
+    spec:
+      containers:
+      - name: chat
+        image: registry.ng.bluemix.net/la_factory/chat-image
+        ports:
+        - containerPort: 7001
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: chat
+ labels:
+   run: chat
+spec:
+ type: NodePort
+ ports:
+   - port: 5000
+     targetPort: 5000
+     nodePort: 30005
+     protocol: TCP
+ selector:
+   run: chat
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  labels:
+    run: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: server
+  template:
+    metadata:
+      labels:
+        run: server
+    spec:
+      containers:
+      - name: server
+        image: registry.ng.bluemix.net/la_factory/server-image
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: server
+ labels:
+   run: server
+spec:
+ type: NodePort
+ ports:
+   - port: 8080
+     targetPort: 8080
+     nodePort: 30100
+     protocol: TCP
+ selector:
+   run: server
