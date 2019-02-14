@@ -7,7 +7,6 @@ http.onreadystatechange=()=>{
     var response =http.response;
       console.log(http.response);
       if (response.bookmark != "nil") {
-      //  $("#info1").html(http.response);
       document.getElementById("status").innerHTML = http.response;
       }
   }

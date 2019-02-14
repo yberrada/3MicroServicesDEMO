@@ -41,5 +41,3 @@ function keyPress(e) {
     login();
   }
 }
-// localStorage.clear();
-// localStorage.removeItem('userID');
