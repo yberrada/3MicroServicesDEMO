@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chat
+  labels:
+    run: chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: chat
+  template:
+    metadata:
+      labels:
+        run: chat
+    spec:
+      containers:
+      - name: chat
+        image: registry.ng.bluemix.net/la_factory/chat-image
+        ports:
+        - containerPort: 7001

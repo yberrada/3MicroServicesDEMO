@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bill
+  labels:
+    run: bill
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: bill
+  template:
+    metadata:
+      labels:
+        run: bill
+    spec:
+      containers:
+      - name: bill
+        image: registry.ng.bluemix.net/la_factory/bill-image
+        ports:
+        - containerPort: 7001

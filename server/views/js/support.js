@@ -62,7 +62,9 @@ function discussion() {
       //updateBot();
     }
   }
-  http.open("GET","http://127.0.0.1:5000/chatlog/"+newInput,true);
+  var elem = document.getElementById('chat');
+  elem.scrollTop = elem.scrollHeight;
+  http.open("GET","http://173.193.122.87:30005/chatlog/"+newInput,true);
   http.send();
 }
 
@@ -73,10 +75,7 @@ if(localStorage.userID!=null ||localStorage.userID !=undefined){
   $("#Logged").show();
   $("#NotLogged").hide();
 }
-window.setInterval(function() {
-  var elem = document.getElementById('chat');
-  elem.scrollTop = elem.scrollHeight;
-}, 500);
+
 //
 // for (var i = 1; i <= 22; i++) {
 //   if(i%2==0)

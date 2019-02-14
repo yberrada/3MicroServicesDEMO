@@ -73,7 +73,8 @@ app.post("/login",(req,res)=>{
      //////////
      cloudant.use('users').insert({ "_id":user_name, "password":password  }, req.params.id).then((data) => {
        console.log(data);
-       res.send(data);
+       // res.send(data);
+        res.send("New cutomer's account succesfully created");
      }).catch((err) => {
        console.log(err.reason);
      });

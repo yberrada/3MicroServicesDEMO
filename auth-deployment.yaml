@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth
+  labels:
+    run: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: auth
+  template:
+    metadata:
+      labels:
+        run: auth
+    spec:
+      containers:
+      - name: auth
+        image: registry.ng.bluemix.net/la_factory/auth-image
+        ports:
+        - containerPort: 7000

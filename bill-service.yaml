@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: bill
+ labels:
+   run: bill
+spec:
+ type: NodePort
+ ports:
+   - port: 7001
+     targetPort: 7001
+     nodePort: 30003
+     protocol: TCP
+ selector:
+   run: bill

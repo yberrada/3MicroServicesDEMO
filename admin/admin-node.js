@@ -17,7 +17,7 @@ app.use( bodyParser.json() );
 app.post("/due",(req,res)=>{
   var user_name=req.body.user;
   var password=req.body.password;
-  var due=req.body.amount;
+  var due=parseInt(req.body.amount);
   cloudant.use('users').find({ selector: { _id:"admin" } }, function(err, result) {
     if (err) {
       throw err

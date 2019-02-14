@@ -10,7 +10,7 @@ http.onreadystatechange=()=>{
   }
 };
 console.log(localStorage.userID)
-http.open("GET","http://127.0.0.1:7001/bill/"+localStorage.userID,true);
+http.open("GET","http://173.193.122.87:30003/bill/"+localStorage.userID,true);
 http.send();
 }
 
@@ -30,7 +30,7 @@ http.onreadystatechange=()=>{
   document.getElementById("input").value = "";
 
 };
-http.open("GET","http://127.0.0.1:7001/bill/pay/"+localStorage.userID+"/"+value,true);
+http.open("GET","http://173.193.122.87:30003/bill/pay/"+localStorage.userID+"/"+value,true);
 http.send();
 };
 document.onkeypress = keyPress;
